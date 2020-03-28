@@ -57,7 +57,7 @@ def main():
 
     stop_event = multiprocessing.Event()
     for i in range(n_cpus):
-        proc = Brute(i * step, (i+1) * step, stop_event)
+        proc = Brute(i * step+start, (i+1) * step+start, stop_event)
         print(proc.start_range, proc.stop_range, f'proc({i})')
         proc.start()
 
